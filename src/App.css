@@ -3,6 +3,8 @@ body,
 #app {
   height: 100vh;
   background-color: #111111;
+  margin: 0px;
+  padding: 0px;
 }
 
 .centeredContainer {
@@ -38,7 +40,6 @@ body,
 #control-panel {
   height: 50vh;
   width: 30vh;
-  border-radius: 5%;
   margin-left: 50px;
   padding: 20px;
   background-color: #AAAAAA;

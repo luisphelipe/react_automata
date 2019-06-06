@@ -2,9 +2,10 @@
 [X] Iteracoes da simulacao
 [/] Botoes
   [X] Quase todos
-  [ ] Limpar board
+  [X] Limpar board
 
-[ ] Interagir com estado
+[X] Interagir com estado
 
+[ ] Calcular ROW e COL a partir do tamanho da tela
 [ ] Responsividade e aparencia
 [ ] Refatorar o Codigo

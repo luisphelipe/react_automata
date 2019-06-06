@@ -53,6 +53,7 @@ function ControlButtonList(props) {
     <button onClick={() => props.actions.setPaused(false)}>Start</button>
     <button onClick={() => props.actions.setPaused()}>Pause</button>
     <button onClick={() => props.actions.randomizeMatrix()}>Random</button>
+    <button onClick={() => props.actions.clearMatrix()}>Clear</button>
     <button onClick={() => props.actions.nextIteration()}>Next</button>
     </div>
   )

@@ -76,6 +76,21 @@ function generateRandomMatrix(options) {
   return random_matrix;
 }
 
+function clearMatrix(matrix, options) {
+  let new_matrix = matrix;
+
+  matrix.forEach((row) => {
+    row.fill(0);
+  })
+
+  return new_matrix;
+}
+
+function toggleCellState(matrix, x, y) {
+  matrix[x][y] = !matrix[x][y];
+  return matrix;
+}
+
 
 class Life extends Component {
   constructor() {
@@ -95,7 +110,9 @@ class Life extends Component {
       actions: {
         setPaused: this.setPaused.bind(this),
         randomizeMatrix: this.randomizeMatrix.bind(this),
+        clearMatrix: this.clearMatrix.bind(this),
         nextIteration: this.nextIteration.bind(this),
+        toggleCellState: this.toggleCellState.bind(this),
 
         updateRowCount: this.updateRowCount.bind(this),
         updateColCount: this.updateColCount.bind(this),
@@ -124,6 +141,12 @@ class Life extends Component {
   randomizeMatrix() {
     this.stopGameLoop();
     this.setState({matrix: generateRandomMatrix(this.state.options)})
+    if (!this.state.options.PAUSED) this.startGameLoop();
+  }
+
+  clearMatrix() {
+    this.stopGameLoop();
+    this.setState({matrix: clearMatrix(this.state.matrix)})
     if (!this.state.options.PAUSED) this.startGameLoop();
   }
 
@@ -163,7 +186,7 @@ class Life extends Component {
     let options = this.state.options;
     new_col_number = +new_col_number;
 
-    if (new_col_number == options.COL_NUMBER) return;
+    if (new_col_number === options.COL_NUMBER) return;
 
     let new_matrix = this.state.matrix;
     new_matrix.forEach((col) => col.length = new_col_number)
@@ -197,6 +220,13 @@ class Life extends Component {
   }
 
 
+  toggleCellState(x, y) {
+    this.setState({
+      matrix: toggleCellState(this.state.matrix, x, y)
+    })
+  }
+
+
   startGameLoop(delay = this.state.options.DELAY) {
     this.gameLoop = setInterval(
       () => this.setState({matrix: processIteration(this.state.matrix, this.state.options)}),  
@@ -227,7 +257,7 @@ class Life extends Component {
   render() {
     return ( 
       <>
-        <Board matrix={this.state.matrix} /> 
+        <Board matrix={this.state.matrix} toggleCellState={this.state.actions.toggleCellState}/> 
         <Controls options={this.state.options} actions={this.state.actions} />
       </>
     );
