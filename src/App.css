@@ -20,13 +20,13 @@ body,
 
 .row {
   display: flex;
-  margin-bottom: 1px;
+  /* margin-bottom: 1px; */
 }
 
 .cell {
-  width: 15px;
-  height: 15px;
-  margin-right: 1px;
+  width: 16px;
+  height: 16px;
+  /* margin-right: 1px; */
 }
 
 .cell-alive {
