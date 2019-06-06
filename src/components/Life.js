@@ -4,6 +4,14 @@ import Board from './Board'
 import Controls from './Controls'
 
 
+const 
+  DEFAULT_RANDOM_FILL_PERCENT = 15,
+  DEFAULT_ROW_NUMBER = 30,
+  DEFAULT_COL_NUMBER = 55,
+  DEFAULT_DELAY = 200,
+  DEFAULT_PAUSED = false;
+
+
 function correct(val, max) {
   if (val < 0) return max + val;
   if (val >= max) return val - max;
@@ -100,11 +108,11 @@ class Life extends Component {
       matrix: [],
 
       options: {
-        RANDOM_FILL_PERCENT: 25,
-        ROW_NUMBER: 20,
-        COL_NUMBER: 30,
-        DELAY: 200,
-        PAUSED: false,
+        RANDOM_FILL_PERCENT: DEFAULT_RANDOM_FILL_PERCENT,
+        ROW_NUMBER: DEFAULT_ROW_NUMBER,
+        COL_NUMBER: DEFAULT_COL_NUMBER,
+        DELAY: DEFAULT_DELAY,
+        PAUSED: DEFAULT_PAUSED,
       },
 
       actions: {
