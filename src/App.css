@@ -1,33 +1,86 @@
-.App {
+html,
+body,
+#app {
+  height: 100vh;
+  background-color: #111111;
+}
+
+.centeredContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mainContainer {
+  height: 90vh;
+  margin-bottom: 10vh;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 1px;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  margin-right: 1px;
+}
+
+.cell-alive {
+  background-color: #001f3f;
+}
+
+.cell-dead {
+  background-color: #AAAAAA;
+}
+
+#control-panel {
+  height: 50vh;
+  width: 30vh;
+  border-radius: 5%;
+  margin-left: 50px;
+  padding: 20px;
+  background-color: #AAAAAA;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#control-button-list {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+#control-button-list>button {
+  margin-top: 5px;
+  padding: 5px;
+  width: 75%;
+  text-align: left;
+  padding-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#control-input-list>div>input {
+  margin-top: 5px;
+  padding: 5px;
+  width: 35%;
+  text-align: left;
+  padding-left: 20px;
+  margin-left: 20px;
+}
+
+#control-input-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#control-input-list>div {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
